@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Checkout - HealFlow</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" /> </head>
 <body class="bg-gray-50 text-gray-800">
   <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
       <a href="index.html" class="text-2xl font-bold text-green-600">HealFlow</a>
       <nav class="space-x-6 text-lg">
-        <a href="index.html#features" class="text-gray-700 hover:text-green-600">Features</a>
+        <a href="index.html#healing-solutions" class="text-gray-700 hover:text-green-600">Our Solution</a>
         <a href="shop.html" class="text-gray-700 hover:text-green-600">Shop</a>
         <a href="cart.html" class="text-gray-700 hover:text-green-600">Cart</a>
       </nav>
@@ -71,45 +72,5 @@
     <p id="confirmation" class="mt-6 text-green-600 font-semibold hidden">Thank you! Redirecting...</p>
   </main>
 
-  <script>
-    const summaryList = document.getElementById('summary-list');
-    const summaryTotal = document.getElementById('summary-total');
-    const cartSummary = document.getElementById('cart-summary');
-
-    // Load cart data from localStorage
-    const cart = JSON.parse(localStorage.getItem('cart')) || [];
-
-    if (cart.length > 0) {
-      cartSummary.style.display = 'block';
-      let subtotal = 0;
-      cart.forEach(item => {
-        const itemTotal = item.price * item.quantity;
-        subtotal += itemTotal;
-        const li = document.createElement('li');
-        li.textContent = `${item.quantity}x ${item.name} - $${itemTotal.toFixed(2)}`;
-        summaryList.appendChild(li);
-      });
-      summaryTotal.textContent = `$${subtotal.toFixed(2)}`;
-    }
-
-    document.getElementById('checkout-form').addEventListener('submit', function (e) {
-      e.preventDefault();
-
-      // Clear cart memory after order
-      localStorage.removeItem('cart');
-
-      this.style.display = 'none';
-      const confirmation = document.getElementById('confirmation');
-      confirmation.style.display = 'block';
-
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      console.log(`Order placed by ${name}, confirmation to ${email}`);
-
-      setTimeout(() => {
-        window.location.href = "thank-you.html";
-      }, 3000);
-    });
-  </script>
-</body>
+  <script src="checkout.js"></script> </body>
 </html>
