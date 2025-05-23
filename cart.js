@@ -1,64 +1,75 @@
-// cart-manager.js
-// Centralized logic for managing the shopping cart in localStorage
+// cart.js
+import { getCart, saveCart, updateCartItemQuantity, getCartSubtotal } from './cart-manager.js';
 
-const CART_STORAGE_KEY = 'healflowCart';
+const cartItemsEl = document.getElementById('cart-items');
+const subtotalEl = document.getElementById('subtotal');
+const emptyCartMsg = document.getElementById('empty-cart-msg');
+const cartContainer = document.getElementById('cart-container');
+const checkoutBtn = document.getElementById('checkout-btn');
 
-export function getCart() {
-    try {
-        const cartJSON = localStorage.getItem(CART_STORAGE_KEY);
-        return cartJSON ? JSON.parse(cartJSON) : [];
-    } catch (error) {
-        console.error("Error getting cart from localStorage:", error);
-        return [];
-    }
+function formatPrice(value) {
+    return `$${value.toFixed(2)}`;
 }
 
-export function saveCart(cart) {
-    try {
-        localStorage.setItem(CART_STORAGE_KEY, JSON.stringify(cart));
-    } catch (error) {
-        console.error("Error saving cart to localStorage:", error);
-    }
-}
+function renderCart() {
+    const cartItems = getCart(); // Get full cart from manager
+    cartItemsEl.innerHTML = '';
 
-export function addToCart(productToAdd) {
-    let cart = getCart();
-    const existingItemIndex = cart.findIndex(item => item.name === productToAdd.name);
-
-    if (existingItemIndex > -1) {
-        // Item exists, update quantity
-        cart[existingItemIndex].quantity += productToAdd.quantity;
+    if (cartItems.length === 0) {
+        cartContainer.classList.add('hidden'); // Use Tailwind hidden class
+        emptyCartMsg.classList.remove('hidden'); // Show empty message
+        return;
     } else {
-        // New item, add to cart
-        cart.push(productToAdd);
+        cartContainer.classList.remove('hidden'); // Show cart container
+        emptyCartMsg.classList.add('hidden'); // Hide empty message
     }
-    saveCart(cart);
+
+    let subtotal = 0;
+
+    cartItems.forEach((item, index) => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+
+        const li = document.createElement('li');
+        li.className = 'py-4 flex items-center justify-between';
+
+        li.innerHTML = `
+            <div>
+                <p class="font-semibold">${item.name}</p>
+                <p class="text-gray-500">${formatPrice(item.price)} each</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <button class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300" data-product-name="${item.name}" data-change="-1">−</button>
+                <span>${item.quantity}</span>
+                <button class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300" data-product-name="${item.name}" data-change="1">+</button>
+                <p class="w-20 text-right font-semibold">${formatPrice(itemTotal)}</p>
+            </div>
+        `;
+        cartItemsEl.appendChild(li);
+    });
+
+    subtotalEl.textContent = formatPrice(subtotal);
+
+    // Add event listeners for quantity buttons after rendering
+    document.querySelectorAll('#cart-items button').forEach(button => {
+        button.addEventListener('click', (event) => {
+            const productName = event.target.getAttribute('data-product-name');
+            const change = parseInt(event.target.getAttribute('data-change'));
+            updateCartItemQuantity(productName, change); // Use manager function
+            renderCart(); // Re-render cart to reflect changes
+        });
+    });
 }
 
-export function updateCartItemQuantity(productName, change) {
-    let cart = getCart();
-    const itemIndex = cart.findIndex(item => item.name === productName);
-
-    if (itemIndex > -1) {
-        cart[itemIndex].quantity += change;
-        if (cart[itemIndex].quantity <= 0) {
-            // Remove item if quantity drops to 0 or less
-            cart.splice(itemIndex, 1);
-        }
-        saveCart(cart);
-    }
+// Proceed to checkout button click handler
+if (checkoutBtn) {
+    checkoutBtn.addEventListener('click', () => {
+        // Before redirecting, save current cart to localStorage (though getCart/saveCart already handle persistence)
+        // This is a good place to ensure the latest cart state is saved, if not implicitly handled by quantity updates.
+        window.location.href = 'checkout.html';
+    });
 }
 
-export function clearCart() {
-    localStorage.removeItem(CART_STORAGE_KEY);
-}
 
-export function getTotalCartQuantity() {
-    const cart = getCart();
-    return cart.reduce((total, item) => total + item.quantity, 0);
-}
-
-export function getCartSubtotal() {
-    const cart = getCart();
-    return cart.reduce((total, item) => total + (item.price * item.quantity), 0);
-}
+// Initial render when the page loads
+document.addEventListener('DOMContentLoaded', renderCart);
