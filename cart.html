@@ -5,13 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Your Cart - HealFlow</title>
   <script src="https://cdn.tailwindcss.com"></script>
-</head>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="styles.css" rel="stylesheet" /> </head>
 <body class="bg-gray-50 text-gray-800">
   <header class="bg-white shadow">
     <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
       <a href="index.html" class="text-2xl font-bold text-green-600">HealFlow</a>
       <nav class="space-x-6 text-lg">
-        <a href="index.html#features" class="text-gray-700 hover:text-green-600">Features</a>
+        <a href="index.html#healing-solutions" class="text-gray-700 hover:text-green-600">Our Solution</a>
         <a href="shop.html" class="text-gray-700 hover:text-green-600">Shop</a>
         <a href="cart.html" class="font-semibold text-green-600">Cart</a>
       </nav>
@@ -38,80 +39,5 @@
     <p id="empty-cart-msg" class="text-center text-gray-500 mt-16 hidden">Your cart is currently empty.</p>
   </main>
 
-  <script>
-    // Sample cart data (in a real site, this could come from localStorage or a backend)
-    const cartItems = [
-      {
-        name: "HealFlow Bandage - Pack of 5",
-        price: 25,
-        quantity: 2
-      },
-      {
-        name: "HealFlow Bandage - Pack of 10",
-        price: 45,
-        quantity: 1
-      }
-    ];
-
-    const cartItemsEl = document.getElementById('cart-items');
-    const subtotalEl = document.getElementById('subtotal');
-    const emptyCartMsg = document.getElementById('empty-cart-msg');
-    const cartContainer = document.getElementById('cart-container');
-
-    function formatPrice(value) {
-      return `$${value.toFixed(2)}`;
-    }
-
-    function renderCart() {
-      cartItemsEl.innerHTML = '';
-
-      if (cartItems.length === 0) {
-        cartContainer.style.display = 'none';
-        emptyCartMsg.style.display = 'block';
-        return;
-      }
-
-      let subtotal = 0;
-
-      cartItems.forEach((item, index) => {
-        const itemTotal = item.price * item.quantity;
-        subtotal += itemTotal;
-
-        const li = document.createElement('li');
-        li.className = 'py-4 flex items-center justify-between';
-
-        li.innerHTML = `
-          <div>
-            <p class="font-semibold">${item.name}</p>
-            <p class="text-gray-500">$${item.price.toFixed(2)} each</p>
-          </div>
-          <div class="flex items-center space-x-4">
-            <button class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300" onclick="updateQuantity(${index}, -1)">−</button>
-            <span>${item.quantity}</span>
-            <button class="px-2 py-1 bg-gray-200 rounded hover:bg-gray-300" onclick="updateQuantity(${index}, 1)">+</button>
-            <p class="w-20 text-right font-semibold">${formatPrice(itemTotal)}</p>
-          </div>
-        `;
-        cartItemsEl.appendChild(li);
-      });
-
-      subtotalEl.textContent = formatPrice(subtotal);
-    }
-
-    function updateQuantity(index, change) {
-      cartItems[index].quantity += change;
-      if (cartItems[index].quantity <= 0) {
-        cartItems.splice(index, 1);
-      }
-      renderCart();
-    }
-
-    renderCart();
-
-    // ✅ Proceed to checkout button click handler
-    document.getElementById('checkout-btn').addEventListener('click', () => {
-      window.location.href = 'checkout.html';
-    });
-  </script>
-</body>
+  <script src="cart.js"></script> </body>
 </html>
