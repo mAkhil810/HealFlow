@@ -12,31 +12,11 @@
     <title>HealFlow Bandage - Smart Healing for Your Family</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: #f0f2f5; /* Light gray background */
-        }
-        .gradient-bg {
-            background: linear-gradient(to right, #6EE7B7, #34D399); /* Green gradient */
-        }
-        .icon {
-            display: inline-block;
-            width: 24px;
-            height: 24px;
-            stroke-width: 2;
-            stroke: currentColor;
-            fill: none;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-    </style>
-</head>
+    <link href="styles.css" rel="stylesheet" /> </head>
 <body class="text-gray-800">
     <header class="bg-white shadow-sm py-4 px-6 md:px-10">
         <nav class="container mx-auto flex justify-between items-center">
             <a href="#" class="text-2xl font-bold text-green-600">HealFlow</a>
-            <!-- Desktop menu -->
             <ul id="nav-menu" class="hidden md:flex space-x-6 items-center">
                 <li><a href="#healing-solutions" class="text-gray-600 hover:text-green-600 transition-colors duration-200">Our Solution</a></li>
                 <li><a href="#how-it-works" class="text-gray-600 hover:text-green-600 transition-colors duration-200">How It Works</a></li>
@@ -48,17 +28,17 @@
                         Shop
                     </a>
                 </li>
-                <li>
+                <li class="relative">
                     <a href="cart.html" class="text-gray-600 hover:text-green-600 transition-colors duration-200">
                         <svg class="icon w-6 h-6" viewBox="0 0 24 24">
                             <circle cx="9" cy="21" r="1"></circle>
                             <circle cx="20" cy="21" r="1"></circle>
                             <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
                         </svg>
+                        <span id="cart-badge" class="absolute top-0 right-0 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold hidden">0</span>
                     </a>
                 </li>
             </ul>
-            <!-- Mobile menu button -->
             <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Toggle menu">
                 <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="4" y1="6" x2="20" y2="6"></line>
@@ -67,7 +47,6 @@
                 </svg>
             </button>
         </nav>
-        <!-- Mobile menu (hidden by default) -->
         <ul id="mobile-nav-menu" class="md:hidden hidden flex-col space-y-4 mt-4 px-6">
             <li><a href="#healing-solutions" class="block text-gray-700 hover:text-green-600 transition-colors duration-200">Your Solution</a></li>
             <li><a href="#how-it-works" class="block text-gray-700 hover:text-green-600 transition-colors duration-200">How It Works</a></li>
@@ -79,9 +58,10 @@
                     Shop
                 </a>
             </li>
-            <li>
+            <li class="relative">
                 <a href="cart.html" class="block text-gray-700 hover:text-green-600 transition-colors duration-200 text-center">
                     Cart
+                    <span id="cart-badge-mobile" class="absolute top-0 right-0 bg-red-600 text-white rounded-full text-xs w-5 h-5 flex items-center justify-center font-bold hidden">0</span>
                 </a>
             </li>
         </ul>
@@ -152,7 +132,7 @@
                         </svg>
                     </div>
                     <h3 class="text-xl font-semibold mb-3">Smart Color Change</h3>
-                    <p class="text-gray-700">
+                    <p class="text-700">
                         The bandage changes color to alert you when it's time to replace it, ensuring you never miss a change and prevent infection.
                     </p>
                 </div>
@@ -212,30 +192,27 @@
                 Ready to experience the future of healing? Order your HealFlow Bandage now and start healing smarter.
             </p>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-                <!-- Product 1 -->
                 <div class="border rounded-xl p-6 shadow hover:shadow-lg transition-shadow duration-300">
-                    <img src="https://placehold.co/200x150?text=HealFlow+Standard" alt="HealFlow Standard" class="mx-auto mb-4 rounded-lg" />
+                    <img src="https://placehold.co/200x150?text=HealFlow+Standard" alt="HealFlow Single Pack" class="mx-auto mb-4 rounded-lg" />
                     <h3 class="text-xl font-semibold mb-2">HealFlow Single Pack</h3>
                     <p class="text-green-600 font-bold text-lg mb-4">$4.99</p>
-                    <button class="add-to-cart bg-green-500 text-white py-2 px-6 rounded-full w-full hover:bg-green-600 transition-colors duration-300" data-product="HealFlow Standard" data-price="19.99">
+                    <button class="add-to-cart bg-green-500 text-white py-2 px-6 rounded-full w-full hover:bg-green-600 transition-colors duration-300" data-product="HealFlow Single Pack" data-price="4.99" data-img="https://placehold.co/200x150?text=HealFlow+Standard">
                         Add to Cart
                     </button>
                 </div>
-                <!-- Product 2 -->
                 <div class="border rounded-xl p-6 shadow hover:shadow-lg transition-shadow duration-300">
                     <img src="https://placehold.co/200x150?text=HealFlow+Pro" alt="HealFlow Pro" class="mx-auto mb-4 rounded-lg" />
-                    <h3 class="text-xl font-semibold mb-2">HealFlow Pro</h3>
+                    <h3 class="text-xl font-semibold mb-2">HealFlow Pro (Pack of 10)</h3>
                     <p class="text-green-600 font-bold text-lg mb-4">$9.99</p>
-                    <button class="add-to-cart bg-green-500 text-white py-2 px-6 rounded-full w-full hover:bg-green-600 transition-colors duration-300" data-product="HealFlow Pro" data-price="29.99">
+                    <button class="add-to-cart bg-green-500 text-white py-2 px-6 rounded-full w-full hover:bg-green-600 transition-colors duration-300" data-product="HealFlow Pro (Pack of 10)" data-price="9.99" data-img="https://placehold.co/200x150?text=HealFlow+Pro">
                         Add to Cart
                     </button>
                 </div>
-                <!-- Product 3 -->
                 <div class="border rounded-xl p-6 shadow hover:shadow-lg transition-shadow duration-300">
-                    <img src="https://placehold.co/200x150?text=HealFlow+Family+Pack" alt="HealFlow Family Pack" class="mx-auto mb-4 rounded-lg" />
+                    <img src="https://placehold.co/200x150?text=HealFlow+Family+Pack" alt="HealFlow Deluxe Pack" class="mx-auto mb-4 rounded-lg" />
                     <h3 class="text-xl font-semibold mb-2">HealFlow Deluxe Pack</h3>
                     <p class="text-green-600 font-bold text-lg mb-4">$29.99</p>
-                    <button class="add-to-cart bg-green-500 text-white py-2 px-6 rounded-full w-full hover:bg-green-600 transition-colors duration-300" data-product="HealFlow Family Pack" data-price="49.99">
+                    <button class="add-to-cart bg-green-500 text-white py-2 px-6 rounded-full w-full hover:bg-green-600 transition-colors duration-300" data-product="HealFlow Deluxe Pack" data-price="29.99" data-img="https://placehold.co/200x150?text=HealFlow+Family+Pack">
                         Add to Cart
                     </button>
                 </div>
@@ -250,57 +227,24 @@
         </div>
     </footer>
 
-    <script>
-        // Mobile menu toggle
-        const mobileMenuButton = document.getElementById('mobile-menu-button');
-        const mobileNavMenu = document.getElementById('mobile-nav-menu');
-
-        mobileMenuButton.addEventListener('click', () => {
-            mobileNavMenu.classList.toggle('hidden');
-        });
-
-        // Simple cart logic
-        const cart = [];
-
-        function updateCartUI() {
-            // Here you can update a cart icon badge or cart sidebar, this demo only logs
-            console.log("Cart Contents:", cart);
-        }
-
-        document.querySelectorAll('.add-to-cart').forEach(button => {
-            button.addEventListener('click', () => {
-                const product = button.getAttribute('data-product');
-                const price = parseFloat(button.getAttribute('data-price'));
-
-                const item = cart.find(i => i.product === product);
-                if (item) {
-                    item.quantity++;
-                } else {
-                    cart.push({ product, price, quantity: 1 });
-                }
-                alert(`Added ${product} to cart!`);
-                updateCartUI();
-            });
-        });
-    </script>
-    <!-- Cart modal -->
-<div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
-  <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
-    <button id="close-modal" class="absolute top-3 right-3 text-gray-600 hover:text-gray-900">&times;</button>
-    <div class="flex space-x-4 mb-4">
-      <img id="modal-product-image" src="" alt="Product Image" class="w-24 h-24 object-cover rounded" />
-      <div>
-        <h3 id="modal-product-name" class="text-xl font-semibold mb-2"></h3>
-        <p id="modal-product-price" class="text-green-600 font-bold"></p>
-      </div>
+    <div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+        <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
+            <button id="close-modal" class="absolute top-3 right-3 text-gray-600 hover:text-gray-900">&times;</button>
+            <div class="flex space-x-4 mb-4">
+                <img id="modal-product-image" src="" alt="Product Image" class="w-24 h-24 object-cover rounded" />
+                <div>
+                    <h3 id="modal-product-name" class="text-xl font-semibold mb-2"></h3>
+                    <p id="modal-product-price" class="text-green-600 font-bold"></p>
+                </div>
+            </div>
+            <label for="quantity" class="block font-medium mb-1">Quantity:</label>
+            <input type="number" id="quantity" min="1" value="1" class="w-20 p-2 border rounded mb-4" />
+            <div class="flex justify-end space-x-4">
+                <button id="cancel-btn" class="px-4 py-2 rounded border hover:bg-gray-100">Cancel</button>
+                <button id="confirm-btn" class="px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600">Confirm</button>
+            </div>
+        </div>
     </div>
-    <label for="quantity" class="block font-medium mb-1">Quantity:</label>
-    <input type="number" id="quantity" min="1" value="1" class="w-20 p-2 border rounded mb-4" />
-    <div class="flex justify-end space-x-4">
-      <button id="cancel-btn" class="px-4 py-2 rounded border hover:bg-gray-100">Cancel</button>
-      <button id="confirm-btn" class="px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600">Confirm</button>
-    </div>
-  </div>
-</div>
+    <script src="script.js"></script>
 </body>
 </html>
