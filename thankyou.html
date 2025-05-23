@@ -5,8 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Thank You - HealFlow</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-    <link href="styles.css" rel="stylesheet" /> </head>
+</head>
 <body class="bg-gray-50 text-gray-800 flex items-center justify-center min-h-screen">
 
     <main class="max-w-xl p-6 bg-white rounded-lg shadow text-center">
@@ -15,5 +14,36 @@
         <p class="text-gray-600">You will be redirected to the home page shortly.</p>
     </main>
 
-    <script src="thankyou.js" type="module"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Retrieve stored order info from localStorage.
+            // This assumes that on the PREVIOUS page (e.g., checkout confirmation),
+            // you have set localStorage.setItem('orderComplete', JSON.stringify({ name: "Customer Name" }));
+            const orderData = JSON.parse(localStorage.getItem('orderComplete'));
+
+            const messageEl = document.getElementById('thank-you-message');
+
+            // Check if orderData exists and has a 'name' property
+            if (orderData && orderData.name) {
+                // If data is found, personalize the message
+                messageEl.textContent = `Thank you for your purchase, ${orderData.name}!`;
+            } else {
+                // If no data or name is found, show a generic message
+                messageEl.textContent = 'Thank you for your order!';
+                console.warn("HealFlow Thank You Page: 'orderComplete' data not found or missing 'name' in localStorage.");
+            }
+
+            // Clear the stored order data from localStorage
+            // This prevents the personalized message from showing on subsequent visits
+            // if the user navigates back to this page without a new order.
+            localStorage.removeItem('orderComplete');
+
+            // Redirect to the home page after 5 seconds
+            setTimeout(() => {
+                window.location.href = 'index.html';
+            }, 5000);
+        });
+    </script>
+<script src="thankyou.js" type="module"></script>
+</body>
 </html>
