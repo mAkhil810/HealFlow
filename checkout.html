@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout - HealFlow</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <header class="bg-white shadow">
+    <div class="max-w-7xl mx-auto px-4 py-6 flex justify-between items-center">
+      <a href="index.html" class="text-2xl font-bold text-green-600">HealFlow</a>
+      <nav class="space-x-6 text-lg">
+        <a href="index.html#features" class="text-gray-700 hover:text-green-600">Features</a>
+        <a href="shop.html" class="text-gray-700 hover:text-green-600">Shop</a>
+        <a href="cart.html" class="text-gray-700 hover:text-green-600">Cart</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-2xl mx-auto mt-10 p-6 bg-white shadow rounded-lg">
+    <h1 class="text-3xl font-bold mb-6">Checkout</h1>
+
+    <div id="cart-summary" class="mb-6 bg-gray-100 p-4 rounded-lg hidden">
+      <h2 class="text-xl font-semibold mb-2">Your Order</h2>
+      <ul id="summary-list" class="list-disc list-inside text-gray-700"></ul>
+      <p class="mt-2 font-semibold">Subtotal: <span id="summary-total">$0.00</span></p>
+    </div>
+
+    <form id="checkout-form" class="space-y-4">
+      <div>
+        <label class="block text-sm font-medium mb-1" for="name">Full Name</label>
+        <input type="text" id="name" required class="w-full border border-gray-300 rounded-lg px-4 py-2" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1" for="email">Email</label>
+        <input type="email" id="email" required class="w-full border border-gray-300 rounded-lg px-4 py-2" />
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1" for="address">Shipping Address</label>
+        <textarea id="address" required class="w-full border border-gray-300 rounded-lg px-4 py-2"></textarea>
+      </div>
+
+      <div>
+        <label class="block text-sm font-medium mb-1" for="card">Credit Card Number</label>
+        <input type="text" id="card" maxlength="19" required placeholder="1234 5678 9012 3456"
+          class="w-full border border-gray-300 rounded-lg px-4 py-2" />
+      </div>
+
+      <div class="flex space-x-4">
+        <div class="flex-1">
+          <label class="block text-sm font-medium mb-1" for="expiry">Expiry Date</label>
+          <input type="text" id="expiry" required placeholder="MM/YY"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2" />
+        </div>
+
+        <div class="flex-1">
+          <label class="block text-sm font-medium mb-1" for="cvv">CVV</label>
+          <input type="text" id="cvv" required maxlength="4"
+            class="w-full border border-gray-300 rounded-lg px-4 py-2" />
+        </div>
+      </div>
+
+      <button type="submit" class="w-full bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition">
+        Place Order
+      </button>
+    </form>
+
+    <p id="confirmation" class="mt-6 text-green-600 font-semibold hidden">Thank you! Redirecting...</p>
+  </main>
+
+  <script>
+    const summaryList = document.getElementById('summary-list');
+    const summaryTotal = document.getElementById('summary-total');
+    const cartSummary = document.getElementById('cart-summary');
+
+    // Load cart data from localStorage
+    const cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+    if (cart.length > 0) {
+      cartSummary.style.display = 'block';
+      let subtotal = 0;
+      cart.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        subtotal += itemTotal;
+        const li = document.createElement('li');
+        li.textContent = `${item.quantity}x ${item.name} - $${itemTotal.toFixed(2)}`;
+        summaryList.appendChild(li);
+      });
+      summaryTotal.textContent = `$${subtotal.toFixed(2)}`;
+    }
+
+    document.getElementById('checkout-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Clear cart memory after order
+      localStorage.removeItem('cart');
+
+      this.style.display = 'none';
+      const confirmation = document.getElementById('confirmation');
+      confirmation.style.display = 'block';
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      console.log(`Order placed by ${name}, confirmation to ${email}`);
+
+      setTimeout(() => {
+        window.location.href = "thank-you.html";
+      }, 3000);
+    });
+  </script>
+</body>
+</html>

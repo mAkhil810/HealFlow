@@ -1,0 +1,122 @@
+/* healflow-style.css */
+
+/* Body font & background */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb; /* light gray */
+  color: #1f2937; /* Tailwind gray-800 */
+  margin: 0;
+  padding: 0;
+}
+
+/* Header styles */
+header {
+  background-color: white;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+/* Links */
+a {
+  color: #16a34a; /* Tailwind green-600 */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #15803d; /* Tailwind green-700 */
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+button:focus {
+  outline: 2px solid #22c55e; /* Tailwind green-500 */
+  outline-offset: 2px;
+}
+
+/* Form inputs */
+input, textarea {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: 1px solid #d1d5db; /* Tailwind gray-300 */
+  border-radius: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  border-color: #16a34a; /* Tailwind green-600 */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(22,163,74,0.3);
+}
+
+/* Cart list items */
+#cart-items li {
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e5e7eb; /* Tailwind gray-200 */
+}
+
+/* Quantity buttons in cart */
+#cart-items button {
+  background-color: #e5e7eb; /* Tailwind gray-200 */
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.375rem;
+}
+
+#cart-items button:hover {
+  background-color: #d1d5db; /* Tailwind gray-300 */
+}
+
+/* Confirmation messages */
+#confirmation {
+  font-weight: 600;
+  color: #16a34a; /* Tailwind green-600 */
+}
+
+/* Utility classes you might want for spacing */
+.mt-10 {
+  margin-top: 2.5rem;
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+.mb-8 {
+  margin-bottom: 2rem;
+}
+
+/* Responsive max widths for containers */
+.max-w-2xl {
+  max-width: 42rem;
+}
+
+.max-w-5xl {
+  max-width: 64rem;
+}
+
+.max-w-7xl {
+  max-width: 80rem;
+}
+
+/* Shadow for cards */
+.shadow {
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Rounded corners */
+.rounded-lg {
+  border-radius: 0.5rem;
+}

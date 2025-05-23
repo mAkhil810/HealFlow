@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="description" content="HealFlow is the smart bandage that disinfects, heals faster, and lets you know when to change.">
+    <meta property="og:title" content="HealFlow Bandage">
+    <meta property="og:description" content="Smart Healing, Always at Hand">
+    <meta property="og:image" content="https://yourdomain.com/path-to-thumbnail.jpg">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>HealFlow Bandage - Smart Healing for Your Family</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5; /* Light gray background */
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #6EE7B7, #34D399); /* Green gradient */
+        }
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <header class="bg-white shadow-sm py-4 px-6 md:px-10">
+        <nav class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-green-600">HealFlow</a>
+            <!-- Desktop menu -->
+            <ul id="nav-menu" class="hidden md:flex space-x-6 items-center">
+                <li><a href="#healing-solutions" class="text-gray-600 hover:text-green-600 transition-colors duration-200">Our Solution</a></li>
+                <li><a href="#how-it-works" class="text-gray-600 hover:text-green-600 transition-colors duration-200">How It Works</a></li>
+                <li><a href="#beyond-wounds" class="text-gray-600 hover:text-green-600 transition-colors duration-200">Beyond Wounds</a></li>
+                <li><a href="#why-healflow" class="text-gray-600 hover:text-green-600 transition-colors duration-200">Why HealFlow</a></li>
+                <li><a href="#get-yours" class="text-gray-600 hover:text-green-600 transition-colors duration-200">Get Yours</a></li>
+                <li>
+                    <a href="shop.html" class="bg-green-500 text-white px-5 py-2 rounded-full font-medium hover:bg-green-600 transition-all duration-300">
+                        Shop
+                    </a>
+                </li>
+                <li>
+                    <a href="cart.html" class="text-gray-600 hover:text-green-600 transition-colors duration-200">
+                        <svg class="icon w-6 h-6" viewBox="0 0 24 24">
+                            <circle cx="9" cy="21" r="1"></circle>
+                            <circle cx="20" cy="21" r="1"></circle>
+                            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                        </svg>
+                    </a>
+                </li>
+            </ul>
+            <!-- Mobile menu button -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500" aria-label="Toggle menu">
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="4" y1="6" x2="20" y2="6"></line>
+                    <line x1="4" y1="12" x2="20" y2="12"></line>
+                    <line x1="4" y1="18" x2="20" y2="18"></line>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile menu (hidden by default) -->
+        <ul id="mobile-nav-menu" class="md:hidden hidden flex-col space-y-4 mt-4 px-6">
+            <li><a href="#healing-solutions" class="block text-gray-700 hover:text-green-600 transition-colors duration-200">Your Solution</a></li>
+            <li><a href="#how-it-works" class="block text-gray-700 hover:text-green-600 transition-colors duration-200">How It Works</a></li>
+            <li><a href="#beyond-wounds" class="block text-gray-700 hover:text-green-600 transition-colors duration-200">Beyond Wounds</a></li>
+            <li><a href="#why-healflow" class="block text-gray-700 hover:text-green-600 transition-colors duration-200">Why HealFlow</a></li>
+            <li><a href="#get-yours" class="block text-gray-700 hover:text-green-600 transition-colors duration-200">Get Yours</a></li>
+            <li>
+                <a href="shop.html" class="block bg-green-500 text-white text-center py-2 rounded-full font-medium hover:bg-green-600 transition-all duration-300">
+                    Shop
+                </a>
+            </li>
+            <li>
+                <a href="cart.html" class="block text-gray-700 hover:text-green-600 transition-colors duration-200 text-center">
+                    Cart
+                </a>
+            </li>
+        </ul>
+    </header>
+
+    <section class="gradient-bg text-white py-20 px-6 md:px-10 text-center rounded-b-3xl shadow-lg">
+        <div class="container mx-auto max-w-4xl">
+            <h1 class="text-4xl md:text-6xl font-extrabold leading-tight mb-6">
+                HealFlow Bandage: <br class="md:hidden" /> Smart Healing, Always at Hand
+            </h1>
+            <p class="text-lg md:text-xl mb-10 opacity-90">
+                Experience faster healing and powerful protection with the world's first self-disinfecting, color-changing, and antibiotic-releasing bandage.
+            </p>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-4 md:space-y-0 md:space-x-6">
+                <a href="#how-it-works" class="bg-white text-green-600 font-semibold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 transition-all duration-300 transform hover:scale-105">
+                    See How It Works
+                </a>
+                <a href="#get-yours" class="text-white border-2 border-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:text-green-600 transition-all duration-300 transform hover:scale-105">
+                    Get Yours Today!
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="healing-solutions" class="py-16 px-6 md:px-10 bg-white rounded-xl shadow-md mx-auto mt-10 max-w-6xl">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">The Everyday Healing Solution</h2>
+            <div class="flex flex-col md:flex-row items-center justify-center space-y-8 md:space-y-0 md:space-x-12">
+                <div class="w-full md:w-1/2 text-left">
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Tired of slow-healing cuts, worries about infection, or not knowing when to change a bandage? HealFlow solves these common problems for you and your family.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed mb-4">
+                        Whether it's a scraped knee, a minor cut, or just a concern about keeping wounds clean, HealFlow provides peace of mind with its intelligent design.
+                    </p>
+                    <p class="text-lg text-gray-700 leading-relaxed font-semibold">
+                        Get back to your day, knowing your wound is protected and healing optimally.
+                    </p>
+                </div>
+                <div class="w-full md:w-1/2 flex justify-center">
+                    <img src="https://placehold.co/400x300/e2e8f0/64748b?text=Easy+Healing+at+Home" alt="Easy Healing at Home" class="rounded-lg shadow-lg w-full max-w-md" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="how-it-works" class="py-16 px-6 md:px-10 bg-gray-50 rounded-xl shadow-md mx-auto mt-10 max-w-6xl">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">How HealFlow Works for You</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-green-500 mb-4 flex justify-center">
+                        <svg class="icon w-12 h-12" viewBox="0 0 24 24">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Instant Infection Shield</h3>
+                    <p class="text-gray-700">
+                        Our plant-based gel immediately starts disinfecting your wound, stopping germs in their tracks the moment you apply it.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-green-500 mb-4 flex justify-center">
+                        <svg class="icon w-12 h-12" viewBox="0 0 24 24">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 6v6l4 2"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Smart Color Change</h3>
+                    <p class="text-gray-700">
+                        The bandage changes color to alert you when it's time to replace it, ensuring you never miss a change and prevent infection.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg transform hover:scale-105 transition-transform duration-300">
+                    <div class="text-green-500 mb-4 flex justify-center">
+                        <svg class="icon w-12 h-12" viewBox="0 0 24 24">
+                            <path d="M20 6L9 17l-5-5"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-3">Accelerated Healing</h3>
+                    <p class="text-gray-700">
+                        Our patented antibiotic release speeds up your body’s natural healing process so you get better, faster.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="beyond-wounds" class="py-16 px-6 md:px-10 bg-white rounded-xl shadow-md mx-auto mt-10 max-w-6xl">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Beyond Wounds: Your Health Partner</h2>
+            <p class="text-lg text-gray-700 max-w-3xl mx-auto">
+                HealFlow isn’t just a bandage. It’s your partner in health, giving you real-time updates about your wounds to help you stay safe and active. Perfect for families, athletes, and anyone who cares about their wellbeing.
+            </p>
+        </div>
+    </section>
+
+    <section id="why-healflow" class="py-16 px-6 md:px-10 bg-gray-50 rounded-xl shadow-md mx-auto mt-10 max-w-6xl">
+        <div class="container mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-900 mb-12">Why HealFlow?</h2>
+            <ul class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 text-gray-700">
+                <li class="flex items-start space-x-4">
+                    <svg class="icon text-green-500 flex-shrink-0 mt-1" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+                    <span>Plant-based, safe, and eco-friendly materials.</span>
+                </li>
+                <li class="flex items-start space-x-4">
+                    <svg class="icon text-green-500 flex-shrink-0 mt-1" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+                    <span>Scientifically proven to reduce healing time by up to 30%.</span>
+                </li>
+                <li class="flex items-start space-x-4">
+                    <svg class="icon text-green-500 flex-shrink-0 mt-1" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+                    <span>Smart sensors integrated for real-time wound care updates.</span>
+                </li>
+                <li class="flex items-start space-x-4">
+                    <svg class="icon text-green-500 flex-shrink-0 mt-1" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"></path></svg>
+                    <span>Trusted by healthcare professionals worldwide.</span>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="get-yours" class="py-16 px-6 md:px-10 bg-white rounded-xl shadow-md mx-auto mt-10 max-w-6xl">
+        <div class="container mx-auto text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-8">Get Yours Today</h2>
+            <p class="text-lg text-gray-700 max-w-xl mx-auto mb-10">
+                Ready to experience the future of healing? Order your HealFlow Bandage now and start healing smarter.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <!-- Product 1 -->
+                <div class="border rounded-xl p-6 shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://placehold.co/200x150?text=HealFlow+Standard" alt="HealFlow Standard" class="mx-auto mb-4 rounded-lg" />
+                    <h3 class="text-xl font-semibold mb-2">HealFlow Single Pack</h3>
+                    <p class="text-green-600 font-bold text-lg mb-4">$4.99</p>
+                    <button class="add-to-cart bg-green-500 text-white py-2 px-6 rounded-full w-full hover:bg-green-600 transition-colors duration-300" data-product="HealFlow Standard" data-price="19.99">
+                        Add to Cart
+                    </button>
+                </div>
+                <!-- Product 2 -->
+                <div class="border rounded-xl p-6 shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://placehold.co/200x150?text=HealFlow+Pro" alt="HealFlow Pro" class="mx-auto mb-4 rounded-lg" />
+                    <h3 class="text-xl font-semibold mb-2">HealFlow Pro</h3>
+                    <p class="text-green-600 font-bold text-lg mb-4">$9.99</p>
+                    <button class="add-to-cart bg-green-500 text-white py-2 px-6 rounded-full w-full hover:bg-green-600 transition-colors duration-300" data-product="HealFlow Pro" data-price="29.99">
+                        Add to Cart
+                    </button>
+                </div>
+                <!-- Product 3 -->
+                <div class="border rounded-xl p-6 shadow hover:shadow-lg transition-shadow duration-300">
+                    <img src="https://placehold.co/200x150?text=HealFlow+Family+Pack" alt="HealFlow Family Pack" class="mx-auto mb-4 rounded-lg" />
+                    <h3 class="text-xl font-semibold mb-2">HealFlow Deluxe Pack</h3>
+                    <p class="text-green-600 font-bold text-lg mb-4">$29.99</p>
+                    <button class="add-to-cart bg-green-500 text-white py-2 px-6 rounded-full w-full hover:bg-green-600 transition-colors duration-300" data-product="HealFlow Family Pack" data-price="49.99">
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-gray-300 py-10 px-6 md:px-10 mt-20">
+        <div class="container mx-auto text-center max-w-4xl">
+            <p>&copy; 2025 HealFlow. All rights reserved.</p>
+            <p class="mt-2 text-sm">Made with ❤️ for smarter healing.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileNavMenu = document.getElementById('mobile-nav-menu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileNavMenu.classList.toggle('hidden');
+        });
+
+        // Simple cart logic
+        const cart = [];
+
+        function updateCartUI() {
+            // Here you can update a cart icon badge or cart sidebar, this demo only logs
+            console.log("Cart Contents:", cart);
+        }
+
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const product = button.getAttribute('data-product');
+                const price = parseFloat(button.getAttribute('data-price'));
+
+                const item = cart.find(i => i.product === product);
+                if (item) {
+                    item.quantity++;
+                } else {
+                    cart.push({ product, price, quantity: 1 });
+                }
+                alert(`Added ${product} to cart!`);
+                updateCartUI();
+            });
+        });
+    </script>
+    <!-- Cart modal -->
+<div id="cart-modal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50">
+  <div class="bg-white rounded-lg shadow-lg max-w-md w-full p-6 relative">
+    <button id="close-modal" class="absolute top-3 right-3 text-gray-600 hover:text-gray-900">&times;</button>
+    <div class="flex space-x-4 mb-4">
+      <img id="modal-product-image" src="" alt="Product Image" class="w-24 h-24 object-cover rounded" />
+      <div>
+        <h3 id="modal-product-name" class="text-xl font-semibold mb-2"></h3>
+        <p id="modal-product-price" class="text-green-600 font-bold"></p>
+      </div>
+    </div>
+    <label for="quantity" class="block font-medium mb-1">Quantity:</label>
+    <input type="number" id="quantity" min="1" value="1" class="w-20 p-2 border rounded mb-4" />
+    <div class="flex justify-end space-x-4">
+      <button id="cancel-btn" class="px-4 py-2 rounded border hover:bg-gray-100">Cancel</button>
+      <button id="confirm-btn" class="px-4 py-2 rounded bg-green-500 text-white hover:bg-green-600">Confirm</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>

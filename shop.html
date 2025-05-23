@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shop - HealFlow Bandage</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f0f2f5;
+        }
+        .gradient-bg {
+            background: linear-gradient(to right, #6EE7B7, #34D399);
+        }
+        .icon {
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            stroke-width: 2;
+            stroke: currentColor;
+            fill: none;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<header class="bg-white shadow-sm py-4 px-6 md:px-10">
+    <nav class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="text-2xl font-bold text-green-600">HealFlow</a>
+        <ul class="hidden md:flex space-x-6 items-center">
+            <li><a href="index.html#healing-solutions" class="text-gray-600 hover:text-green-600 transition-colors duration-200">Your Solution</a></li>
+            <li><a href="index.html#how-it-works" class="text-gray-600 hover:text-green-600 transition-colors duration-200">How It Works</a></li>
+            <li><a href="index.html#beyond-wounds" class="text-gray-600 hover:text-green-600 transition-colors duration-200">Beyond Wounds</a></li>
+            <li><a href="index.html#why-healflow" class="text-gray-600 hover:text-green-600 transition-colors duration-200">Why HealFlow</a></li>
+            <li><a href="index.html#get-yours" class="text-gray-600 hover:text-green-600 transition-colors duration-200">Get Yours</a></li>
+            <li>
+                <a href="shop.html" class="bg-green-500 text-white px-5 py-2 rounded-full font-medium hover:bg-green-600 transition-all duration-300">
+                    Shop
+                </a>
+            </li>
+            <li>
+                <a href="index.html#cart" class="text-gray-600 hover:text-green-600 transition-colors duration-200">
+                    <svg class="icon w-6 h-6" viewBox="0 0 24 24">
+                        <circle cx="9" cy="21" r="1"></circle>
+                        <circle cx="20" cy="21" r="1"></circle>
+                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+                    </svg>
+                </a>
+            </li>
+        </ul>
+        <button class="md:hidden p-2 rounded-md text-gray-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-green-500">
+            <svg class="icon" viewBox="0 0 24 24">
+                <path d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+        </button>
+    </nav>
+</header>
+
+<main class="container mx-auto max-w-4xl py-16 px-6 md:px-10 text-center">
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-8 text-green-600">Shop HealFlow Bandage</h1>
+    <p class="text-lg md:text-xl mb-12 text-gray-700">
+        Welcome to our shop! Choose your HealFlow Bandage pack and enjoy smart healing technology for your family.
+    </p>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <!-- Example Product 1 -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <img src="https://placehold.co/200x150/6ee7b7/ffffff?text=Single+Bandage" alt="Single Bandage" class="mx-auto mb-4 rounded-lg" />
+            <h2 class="text-xl font-semibold mb-2">HealFlow Single Pack</h2>
+            <p class="text-gray-700 mb-4">Perfect for small cuts and scrapes.</p>
+            <p class="text-green-600 font-bold mb-4">$4.99</p>
+            <a href="cart.html" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300 inline-block">
+  Add to Cart
+</a>
+        </div>
+
+        <!-- Example Product 2 -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <img src="https://placehold.co/200x150/34d399/ffffff?text=Family+Pack" alt="Family Pack" class="mx-auto mb-4 rounded-lg" />
+            <h2 class="text-xl font-semibold mb-2">HealFlow Pro / Family (10 Bandages)</h2>
+            <p class="text-gray-700 mb-4">Best value for the whole family.</p>
+            <p class="text-green-600 font-bold mb-4">$9.99</p>
+            <a href="cart.html" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300 inline-block">
+  Add to Cart
+</a>
+        </div>
+
+        <!-- Example Product 3 -->
+        <div class="bg-white rounded-xl shadow-lg p-6">
+            <img src="https://placehold.co/200x150/059669/ffffff?text=Deluxe+Kit" alt="Deluxe Kit" class="mx-auto mb-4 rounded-lg" />
+            <h2 class="text-xl font-semibold mb-2">Deluxe Kit</h2>
+            <p class="text-gray-700 mb-4">Includes bandages, disinfectant gel & more.</p>
+            <p class="text-green-600 font-bold mb-4">$29.99</p>
+            <a href="cart.html" class="bg-green-500 text-white px-4 py-2 rounded-full hover:bg-green-600 transition duration-300 inline-block">
+  Add to Cart
+</a>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-gray-800 text-white py-8 px-6 md:px-10 text-center rounded-t-3xl mt-16">
+    <p class="text-sm">&copy; 2025 HealFlow Bandage. All rights reserved.</p>
+</footer>
+<main class="container mx-auto max-w-4xl py-16 px-6 md:px-10 text-center">
+    <!-- Back to Home Button -->
+    <div class="mb-8 text-left">
+        <a href="index.html" 
+           class="inline-block bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded-full font-medium transition duration-300">
+            ← Back to Home
+        </a>
+    </div>
+
+    <h1 class="text-4xl md:text-6xl font-extrabold mb-8 text-green-600">Shop HealFlow Bandage</h1>
+    <p class="text-lg md:text-xl mb-12 text-gray-700">
+        Welcome to our shop! Choose your HealFlow Bandage pack and enjoy smart healing technology for your family.
+    </p>
+    <!-- ... rest of the shop content ... -->
+     <!-- Cart container -->
+<div id="cart-container" class="bg-white shadow rounded-lg p-6">
+  <p id="item-name" class="text-xl font-semibold mb-2"></p>
+  <p id="item-price" class="text-lg text-gray-700"></p>
+
+  <a href="checkout.html" class="mt-6 inline-block bg-green-600 text-white px-6 py-3 rounded-lg shadow hover:bg-green-700 transition">
+    Proceed to Checkout
+  </a>
+</div>
+</main>
+</body>
+</html>
